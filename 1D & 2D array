@@ -1,0 +1,225 @@
+# add all elemnt
+"""
+class singleArray():
+    def __init__(self,arr):
+        self.arr = arr
+
+    def arrLength(self):
+        print("array length is:",len(arr))
+
+    def arrIndex(self):
+
+        for index in range(len(arr)):
+            print(arr[index])
+
+    def arrSorted(self):
+        print("sorted array: ",sorted(arr))
+
+
+    def arrAdd(self):
+        sum = 0
+
+        for element in arr:
+            sum = sum + element
+        return sum
+
+    def arrSub(self):
+        sub = 0
+        for element in arr:
+            sub = sub - element
+
+        return sub
+
+    def arrMultiply(self):
+        multiply =  1
+        for element in arr:
+            multiply =  multiply * element
+
+        return multiply
+
+    def arrDiv(self):
+        divided = 1
+        for element in arr:
+            divided = divided // element
+
+        return  divided
+
+    def arrMinAndMax(self):
+        max = arr[0]
+        min = arr[0]
+
+        num = len(arr)
+
+        for i in range(0,num):
+
+            if (arr[i]>max):
+                max = arr[i]
+
+            elif(arr[i] < min):
+                min = arr[i]
+
+        return min, max
+
+class SecondArray():
+    def __init__(self,arr1):
+        self.arr1 = arr1
+       # self.arr2 = arr2
+
+    def addArray(self):
+        sum = 0
+        row = len(arr1)
+        coloum = len(arr1[0])
+        for i in range(row):
+            for j in range(coloum):
+
+                arr3 = arr1[i][j]
+                sum =  sum + arr3
+        return  sum
+
+    def operaterArray(self):
+        sub = 0
+        row = len(arr1)
+        arrayAdd = [[0, 0, 0, 0, 0], [0, 0, 0, 0, 0]]
+        arraySub = [[0, 0, 0, 0, 0], [0, 0, 0, 0, 0]]
+        arraymultiply = [[0, 0, 0, 0, 0], [0, 0, 0, 0, 0]]
+        coloum = len(arr1[0])
+
+        for  i in range(row):
+            for j in range(coloum):
+                temp = arr1[i][j]
+                sub = sub - temp
+                arrayAdd[i][j] =arr1[i][j] + arr2[i][j] #adding two array
+                arraySub[i][j] = arr1[i][j] - arr2[i][j]  # substract two array
+                arraymultiply[i][j] = arr1[i][j] * arr2[i][j] # multiply two array
+        print("2D array",arrayAdd)
+        print("2D subtract array",arraySub)
+        print("2D array multiply",arraymultiply)
+        return sub
+
+    def  sortArray(self):
+
+        for i in range
+
+
+
+arr1 = [[4, 5, 6, 8, 9], [6, 7, 4, 0, 7]]
+arr2 = [[3, 5, 7, 9, 4], [7, 8, 3, 5, 2]]
+
+
+arr = [1, 2, 3, 4, 5]
+arrObj = singleArray(arr)
+arr1Obj = SecondArray(arr1)
+
+
+arrLenResult = arrObj.arrLength()
+indexelement = arrObj.arrIndex()
+sortedarray = arrObj.arrSorted()
+addResult = arrObj.arrAdd()
+subtractResult = arrObj.arrSub()
+multiplyResult = arrObj.arrMultiply()
+dividedResult = arrObj.arrDiv()
+minMaxResult = arrObj.arrMinAndMax()
+
+sumResult = arr1Obj.addArray()
+subResult = arr1Obj.operaterArray()
+
+print("Sum of array element is :",addResult)
+print("Subtract of array element is:",subtractResult)
+print("Multiply of array element is:",multiplyResult)
+print("Divided of array element is:",dividedResult)
+print("min and max number:", minMaxResult)
+
+print("Sum of 2D array",sumResult)
+print("substra of 2D array",subResult)
+
+# array of multiply....
+t = int(input())
+
+while(t > 0):
+    multiply =  1
+    n = int(input())
+
+    array = list(map(int,input().split()))
+    array.sort()
+    for element in array:
+        multiply = multiply * element
+    print(multiply)
+
+t = t - 1
+
+# array odd and even problem......
+
+n = int(input())
+temp = []
+tempEven = []
+tempOdd = []
+for i in range(n):
+    array =list(map(int,input().split()))
+    temp.append(array)
+
+    for i in array:
+        if i % 2 == 0:
+            tempEven.append(i)
+
+        else:
+            tempOdd.append(i)
+
+    print(tempEven)
+    print(tempOdd)
+
+
+t = int(input())
+while(t>0):
+    def rearray(arr, n):
+        temp = n * [None]
+        small = 0
+        large = n - 1
+        max = True
+        for i in range(n):
+            if max is True:
+                temp[i] = arr[large]
+                large -= 1
+
+            else:
+                temp[i] = arr[small]
+                small += 1
+
+            max = bool(1 - max)
+        for i in range(n):
+            arr[i] = temp[i]
+        return arr
+    t = t -1
+n= int(input())
+arr = list(map(int, input().split()))
+n = len(arr)
+
+print(rearray(arr,n))
+"""
+
+
+def rightRotation(arr, n):
+    temp = arr[n-1]
+    for i in range(n - 1, 0, -1):
+        arr[i] = arr[i - 1]
+    arr[0] = temp
+
+
+def printArr(arr, n):
+    for i in range(n):
+        print(arr[i], end=' ')
+    print()
+
+
+def main():
+    t = int(input())
+    while (t > 0):
+        n, k = map(int,input().split())
+        arr = list(map(int,input().split()))
+        for i in range(k):
+            rightRotation(arr,n)
+        printArr(arr, n)
+        t = t - 1
+
+
+if __name__ == '__main__':
+    main()
