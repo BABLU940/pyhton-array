@@ -1,0 +1,43 @@
+# # write a  program reversed the a array
+
+# def func(arr):
+#     temp = []
+#     for i in range(len(arr) - 1, -1, -1):
+#         temp.append(arr[i])
+#     return temp
+        
+    
+# n = 5       
+# arr = [1,2,3,4,5]        
+# fun  = func(arr)
+# print(fun)
+
+
+# def fun(arr,n):
+#     if(n == 0):
+#         return 0
+
+#     elif(n== 1):
+#         return 1
+    
+#     elif(arr[n-1] >= arr[n]):
+#         return 
+        
+# arr = [5,10,20,15]
+# n= len(arr)
+
+
+
+def peekElement(arr):
+    
+    if(len(arr) == 0):
+        return 0
+    elif(len(arr) == 1):
+        return i
+    for i in range(1,len(arr)-1):
+        if(arr[i] >= arr[i-1] and arr[i] >= arr[i+1]):
+            print(arr[i])
+        
+        
+arr = [1,2,3,5,4,6,7,8,9,1]
+peekEleResult = peekElement(arr)
